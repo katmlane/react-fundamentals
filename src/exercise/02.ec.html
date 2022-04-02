@@ -1,0 +1,36 @@
+<!-- See if you can figure out how to write the JavaScript + React code to generate this DOM output:
+
+<body>
+  <div id="root">
+    <div class="container">
+      <span>Hello</span>
+      <span>World</span>
+    </div>
+  </div>
+</body> -->
+
+
+<html>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
+
+
+
+    <script type="module">
+      const rootElement = document.getElementById('root')
+      const elementProps = {
+          className:'container', 
+          children : [
+              React.createElement('span', null, "Hello"),
+              React.createElement('span', null, "World"),
+            ],
+        }
+      const elementType = "div"
+      const containerElement = React.createElement(elementType, elementProps)
+      ReactDOM.(containerElement, rootElement)
+    </script>
+
+  </body>
+</html>
